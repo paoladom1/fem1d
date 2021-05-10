@@ -8,8 +8,7 @@ python3 -m venv venv
 ### Active the Virtual Environment
 
 ```bash
-cd venv
-source bin/activate
+source venv/bin/activate
 ```
 
 This should leave you in a bash console with the prompt `(venv): [<user>]$ `
