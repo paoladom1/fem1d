@@ -8,24 +8,24 @@
 ## Prepare project
 ### Create venv
 
-### On Unix Systems:
+#### On Unix Systems:
 ```bash
 python3 -m venv venv
 ```
 
-### On Windows:
+#### On Windows:
 ```powershell
 python -m venv venv
 ```
 
 ### Active the Virtual Environment
 
-### On Unix Systems:
+#### On Unix Systems:
 ```bash
 source venv/bin/activate
 ```
 
-### On Windows:
+#### On Windows:
 ```powershell
 .\venv\Scripts\activate
 ```
