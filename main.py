@@ -16,14 +16,10 @@ def main():
 
     # create local systems
     local_K_array = np.array([create_local_K(l, k) for x in range(num_elements)])
-    print(local_K_array)
     local_b_array = np.array([create_local_b(l, Q) for x in range(num_elements)])
-    print(local_b_array)
 
     # build base K and b from assembly
     K, b = assembly(nodes, elements, local_K_array, local_b_array)
-    print("K: {0}".format(K))
-    print("b: {0}".format(b))
 
     # apply neumann and dirichlet conditions
     K, b = apply_conditions(mesh.neumann_condition, mesh.dirichlet_condition, K, b)

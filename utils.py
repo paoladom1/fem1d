@@ -19,7 +19,7 @@ def read_mesh():
 
     """
 
-    l, k, Q = map(float, input("ingrese los parametros para el modelo (l k Q): ").split(" "))
+    l, k, Q = map(float, input("ingrese los parametros para el modelo separado por espacios (l k Q): ").split(" "))
     cant_nodes = int(input("ingrese la cantidad de nodos para la malla: "))
 
     # create list of nodes
@@ -29,11 +29,11 @@ def read_mesh():
     elements = [Element(x, n1, n2) for x, n1, n2 in zip(range(1, cant_nodes), nodes, nodes[1:])]
 
     # create dirichlet condition
-    dirichlet_node, dirichlet_value = read_condition("ingrese la condicion de dirichlet: ")
+    dirichlet_node, dirichlet_value = read_condition("ingrese la condicion de dirichlet separada por espacios (node_id value): ")
     dirichlet_condition = Condition(next(x for x in nodes if x.id == int(dirichlet_node)), float(dirichlet_value))
 
     # create neumann condition
-    neumann_node, neumann_value = read_condition("ingrese la condicion de neumann: ")
+    neumann_node, neumann_value = read_condition("ingrese la condicion de neumann separada por espacios (node_id value): ")
     neumann_condition = Condition(next(x for x in nodes if x.id == int(neumann_node)), float(neumann_value))
 
     # mesh data
